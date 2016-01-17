@@ -1,0 +1,134 @@
+<html>
+<head>
+<style> 
+ body {
+    background-repeat: no-repeat;
+    background-size:1400px;    
+    background-color:BLACK;
+ }
+
+#title{
+    position: absolute;
+    left: 110px;
+    top: 5px;
+
+}
+#menu{
+    position: absolute;
+    left: 40px;
+    top: 200px;
+}
+#play{
+    position: absolute;
+    left: 320px;
+    top: 335px;
+    z-index: 2;
+    opacity:0.6;
+    filter: alpha(opacity=50); 
+
+}
+#play:hover {
+    opacity: 1.0;
+    filter: alpha(opacity=100);
+}
+
+#za8lool{
+    position: absolute;
+    left: 580px;
+    top:100px;
+
+}
+#omza8lool{
+
+    position: absolute;
+    left: 820px;
+    top:150px;
+}
+#name1{
+    position: absolute;
+    left: 900px;
+    top:550px;   
+}
+#name2{
+    position: absolute;
+    left:830px;
+    top:550px;
+}
+#nmms{
+position: absolute;
+left: 700px;
+ top:20px;
+}
+
+
+    </style>
+           
+</head>
+<body background="img/wood.jpg" background-size="cover">
+    <img id="title" src="img/themaze.png">
+     <div id="menu" border=solid>
+        <a href="mazeGame.html" style="width=100%;height=30%">
+            <img id="easy" alt="easy game" src="img/easy2.png" style="width="100%";height="30%""  >
+        </a></br>
+        <a href="mazeGame.html" style="width=100%;height=30%">
+            <img id="medium" alt="medium game" src="img/MEDIUM2.png" style="width="100%";height="30%"">
+        </a></br>
+        <a href="mazeGame.html" style="width=100%;height=30%">
+            <img id="hard" alt="hard game" src="img/hard2.png" style="width="100%";height="30%"">
+        </a>
+    </div>
+    <!-- <div id="play">
+        <a  href="">
+            <img src="img/play2.png">
+        </a>
+    </div> -->
+    <div class="chars">
+        <img id="za8lool" src="img/ze2red.png">
+        <img id="omza8lool" src="img/omza8lool.png">
+        
+    </div>
+        <!--<img id="name1" src="img/om.png">
+        <img id="name2" src="img/ZA8LOOL.png">-->
+		<img id = "nmms" src="img/om.png">
+    <script>
+        window.onload = function()
+        {
+			if(typeof localStorage.isNotFirst == "undefined"){
+					localStorage.isNotFirst = "true";
+					localStorage.level=0;
+					}
+            var charing=document.getElementsByClassName('chars')[0];
+			//console.log(chars);
+            var namy=document.getElementById('nmms');
+			var selimg = document.getElementsByTagName('a');
+				selimg[0].addEventListener("click",function(){
+					localStorage.level= 1 ;
+				});
+				selimg[1].addEventListener("click",function(){
+					localStorage.level= 2 ;
+				});
+				selimg[2].addEventListener("click",function(){
+					localStorage.level= 3 ;
+				});
+			
+			//console.log(namy.children[0]);
+            var texting = ["za8lool","om"];
+			//console.log(text[0]);
+            
+                charing.children[0].addEventListener("click",function()
+                    {
+                        namy.setAttribute("src","img/"+texting[0]+".png");
+                    });
+			    charing.children[1].addEventListener("click",function()
+                    {
+                        namy.setAttribute("src","img/"+texting[1]+".png");
+                    });
+				
+			
+			console.log(charing.children.length);
+		}
+
+    </script>
+</body>
+</html>
+
